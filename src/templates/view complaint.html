@@ -1,0 +1,55 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers td{background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3268ac;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div align="center">
+  <caption align="top">
+   <h2><strong> VIEW COMPLAINTS</strong></h2>
+  </caption>
+<table width="375" border="1" id="customers">
+        <p></p>
+        <p></p>
+  <tr>
+    <th width="200" height="43" scope="col">Username</th>
+    <th width="200" scope="col">Complaints</th>
+    <th width="500" scope="col">Date</th>
+    <th width="200" scope="col">&nbsp;</th>
+  </tr>
+  {% for i in val%}
+  <tr>
+    <td height="59">{{i[0]}}&nbsp;</td>
+    <td>{{i[1]}}&nbsp;</td>
+    <td>&nbsp;{{i[2]}}</td>
+    <td><a href="replycomp?id={{i[3]}}" class="btn btn-primary">Send Reply</a></td>
+  </tr>
+  {%endfor%}
+</table>
+</div>
+</body>
+</html>
+{%endblock%}

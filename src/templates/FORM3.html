@@ -1,0 +1,78 @@
+{% extends 'indexuser.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/search1">
+  <caption align="top">
+        <h2><strong>SEARCH PRODUCT</strong></h2>
+      </caption>
+  <div align="center">
+    <table width="447" border="0" id="customers">
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+       <tr>
+        <th width="149" height="56" scope="col">Product</th>
+        <th width="199" scope="col"><select name="product" >
+        {% for i in car %}
+          <option value="{{ i[0]}}">{{i[1]}}</option> {%endfor%} </select> </th>
+      </tr>
+      <tr>
+        <td colspan="3" scope="row"><label>
+        </label></td>
+      </tr>
+      </table>
+    <div align="center">
+            <input type="submit" name="SEARCH" value="SEARCH" />
+            </div>
+    <table width="600" border="0" id="customers">
+        <br>
+      <tr>
+        <th width="91" height="37" scope="row"><span class="style4">Reviews</span></th>
+         <th width="91" height="37" scope="row"><span class="style4">Rating</span></th>
+           <th width="91" height="37" scope="row"><span class="style4">Flipkart</span></th>
+           <th width="91" height="37" scope="row"><span class="style4">Amazon</span></th>
+
+      </tr>
+      {% for i in v %}
+      <tr>
+        <td width="284">{{ i[2]}}</td>
+      <td>{{ i[3]}}</td>
+          <td><a href="{{ i[10]}}"><font color="blue">{{ i[10]}}</font></a></td>
+          <td><a href="{{ i[11]}}"><font color="blue">{{ i[11]}}</font></a></td>
+      </tr>
+      {% endfor %}
+        <br>
+    </table>
+  </div>
+  <div align="center"></div>
+</form>
+</body>
+</html>
+{%endblock%}

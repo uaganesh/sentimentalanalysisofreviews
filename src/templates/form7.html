@@ -1,0 +1,62 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <h2 align="top"><strong>PRODUCT DETAILS</strong></h2>
+    <table width="447" border="0" id="customers">
+      <tr>
+        <th width="55" scope="col">Product Name </th>
+        <th width="42" scope="col">Image</th>
+        <th width="77" scope="col">Quantity</th>
+        <th width="58" scope="col">Description</th>
+        <th width="55" scope="col">Price</th>
+        <th width="120" scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td> {{i[1]}} &nbsp;</td>
+        <td>&nbsp;<img src="static/product/{{i[2]}}" width="50" height="50"> <br><a href="/changeimage1?id={{i[0]}}"><font color="blue">Change Image</font></a> </td>
+        <td> {{i[3]}} &nbsp;</td>
+        <td> {{i[4]}} &nbsp;</td>
+        <td> {{i[5]}} &nbsp;</td>
+        <td><label><a href="/updateproduct?id={{i[0]}}"> <font color="blue">Edit</font>  </a>&nbsp  &nbsp
+          <a href="/deleteproduct1?id={{i[0]}}"><font color="blue">Delete</font></a>
+        </label></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="6"><div align="center"><a href="/addproduct"><font color="blue">Add Product</font></a></div></td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock%}

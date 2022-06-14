@@ -1,0 +1,50 @@
+{% extends 'indexuser.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers td{background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3268ac;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div align="center">
+  <caption align="top">
+   <h2><strong> SEARCH HISTORY</strong></h2>
+  </caption>
+<table width="375" border="1" id="customers">
+
+  <tr>
+    <th  scope="col">Product</th>
+    <th  scope="col">History</th>
+  </tr>
+  {% for i in val%}
+  <tr>
+    <td width="400"><font color="blue"> {{i[1]}}&nbsp;</font></td>
+    <td><a href="{{i[2]}}"><font color="blue"><u>{{i[2]}}</u></font></a>&nbsp;</td>
+  </tr>
+  {%endfor%}
+</table>
+</div>
+</body>
+</html>
+{%endblock%}

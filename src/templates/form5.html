@@ -1,0 +1,55 @@
+{% extends 'indexuser.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/feedback1">
+  <div align="center">
+    <caption align="top">
+        <p></p>
+        <p></p>
+      <h2><strong>     FEEDBACKS   </strong></h2>
+      </caption>
+    <table width="1200" border="0" id="">
+      <tr>
+        <th><font color="white" size="6" ><center>Write to Us</center></font></th>
+        <th><label>
+          <textarea name="textarea" style="width:600;height:100;"></textarea>
+        </label></th>
+      </tr>
+      <tr>
+        <td height="70" colspan="5" scope="row"><label>
+        </label></td>
+      </tr>
+      </table>
+    <div align= center><input type="submit" name="Submit" value="Submit" class="btn btn-danger btn-lg"/>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+{% endblock%}

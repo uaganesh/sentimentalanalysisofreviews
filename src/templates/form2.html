@@ -1,0 +1,76 @@
+{% extends 'index.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/register">
+  <div align="center">
+    <caption align="top">
+      <h2><strong>CREATE ACCOUNT </strong></h2>
+      </caption>
+    <table width="1000" border="0" id="customers">
+      <tr>
+        <th width="91" height="37" scope="row"><span class="style4">Name</span></th>
+        <th width="284"><label>
+          <input type="text" name="textfield" required pattern="[A-Z a-z . ]{2,25}"/>
+        </label></th>
+      </tr>
+      <tr>
+        <td height="31" scope="row"><span class="style4">Mail-ID</span></td>
+        <td><label>
+          <input type="text" name="textfield2" required pattern="[a-z 0-9._%+-]+@[ a-z 0-9.-]+\.[a-z]{2,3}" />
+        </label></td>
+      </tr>
+      <tr>
+        <th height="34" scope="row"><span class="style4">Contact Number </span></th>
+        <th><label>
+          <input type="text" name="textfield3" required pattern="[6789][0-9]{9}" />
+        </label></th>
+      </tr>
+      <tr>
+        <td height="48" scope="row"><span class="style4">Set Password </span></td>
+        <td><label>
+          <input name="textfield4" type="password" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th height="43" scope="row"><span class="style4">Confirm Password</span></th>
+        <th><label>
+          <input name="textfield5" type="password" required />
+        </label></th>
+      </tr>
+      <tr>
+        <td height="57" colspan="2" scope="row"><label>
+        </label></td>
+      </tr>
+    </table>
+    <div align="center"><input type="submit" name="Submit" value="Submit" /></div>
+  </div>
+</form>
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,50 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="1000%" border="0"  id="customers" >
+      <tr>
+        <th scope="col">Products</th>
+        <th scope="col">Average Rating(Sentimental Score)</th>
+        <th scope="col">Flipkart</th>
+        <th scope="col">Amazon</th>
+      </tr>{% for i in val %}
+      <tr>
+        <td>{{i[0]}}</td>
+        <td> {{i[3]}}</td>
+        <td><a href="{{i[1]}}"><font color="blue">{{i[1]}}</font></a></td>
+        <td><a href="{{i[2]}}"><font color="blue">{{i[2]}}</font></a> </td>
+      </tr>
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+{% endblock %}

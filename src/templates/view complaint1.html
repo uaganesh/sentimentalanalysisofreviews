@@ -1,0 +1,53 @@
+{% extends 'indexuser.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers td{background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3268ac;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div align="center">
+  <caption align="top">
+   <h2><strong> VIEW COMPLAINTS REPLY</strong></h2>
+  </caption>
+<table width="600" border="1" id="customers">
+        <p></p>
+        <p></p>
+  <tr>
+    <th width="300" scope="col">Complaints</th>
+    <th width="500" scope="col">Date</th>
+        <th width="200" scope="col">Reply</th>
+  </tr>
+  {% for i in val%}
+  <tr>
+    <td height="59">{{i[2]}}&nbsp;</td>
+    <td>{{i[3]}}&nbsp;</td>
+    <td>&nbsp;{{i[4]}}</td>
+  </tr>
+  {%endfor%}
+</table>
+</div>
+</body>
+</html>
+{%endblock%}

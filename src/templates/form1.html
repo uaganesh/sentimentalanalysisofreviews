@@ -1,0 +1,62 @@
+{% extends 'index.html'%}
+{% block body%}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/login">
+   <h1 align="top">
+        <strong>LOGIN</strong>
+      </h1>
+  <div align="center">
+    <table width="442" height="219" border="0" id="customers">
+
+      <tr>
+        <th width="300" scope="row"><center>Username</center></th>
+        <th width="358"><label>
+          <input type="text" name="textfield" required />
+        </label></th>
+      </tr>
+      <tr>
+        <td scope="row"><center>Password</center></td>
+        <td><label>
+          <input name="textfield2" type="password" required />
+        </label></td>
+      </tr>
+      <tr>
+        <center> <th height="36" colspan="2" scope="row"><a href="createacc" class="style1"><font color="white"><center><i>Not registered yet ? </i>SignUp </center></font></a>
+</th></center>
+
+    </tr>
+      </table>
+    <div align="center">
+      <input type="submit" name="Submit" value="Login"  /></div>
+
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

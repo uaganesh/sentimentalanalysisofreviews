@@ -1,0 +1,52 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form action="updateimage" method="post" enctype="multipart/form-data">
+  <caption align="top">
+   <h2 align="top"><strong>CHANGE IMAGE </strong></h2>
+  </caption>
+<table width="428" border="0" id="customers">
+  <tr>
+    <th width="127" height="43" scope="col">Image</th>
+    <th width="285" scope="col"><label>
+      <input type="file" name="file" required/>
+    </label></th>
+  </tr>
+  <tr>
+    <td height="61" colspan="2"><label>
+    </label></td>
+  </tr>
+</table>
+  <div align="center">
+        <input type="submit" name="Submit" value="UPDATE" />
+        </div>
+  </form>
+</body>
+</html>
+{% endblock %}

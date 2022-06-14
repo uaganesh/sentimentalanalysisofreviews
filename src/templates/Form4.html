@@ -1,0 +1,79 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<div align="center">
+  <table width="429" border="0" id="cutomers">
+    <caption align="top">
+      <strong>PRODUCT DETAILS      </strong>
+    </caption>
+    <tr>
+      <th width="77" scope="row">Product Name </th>
+      <td width="336"><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Product Image </th>
+      <td><label>
+        <div align="center">
+          <input type="text" name="textfield2" />
+          <input type="file" name="file" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Quantity</th>
+      <td><label>
+        <input type="text" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><label>
+        <input type="text" name="textfield4" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td><label>
+        <input type="text" name="textfield5" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
+{% endblock%}

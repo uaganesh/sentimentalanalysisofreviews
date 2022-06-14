@@ -1,0 +1,53 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div align="center">
+<form id="form1" name="form1" method="post" action="sendreply">
+ <caption align="top"> <h2><strong>REPLY TO COMPLAINTS</strong></h2>
+  </caption>
+<table width="350" border="0" id="">
+  <tr>
+      <th width="80" scope="col"><font color="white" size="6"> <center>Reply</center></font></th>
+    <th width="300" scope="col"><label>
+      <input type="text" name="textfield" style="width:600;height:100;"/>
+    </label></th>
+  </tr>
+  
+  <tr>
+    <td colspan="2"></td>
+  </tr>
+</table>
+  <label>
+      <input type="submit" name="submit" value="Send" class="btn btn-danger btn-lg"/>
+    </label>
+</form>
+</div>
+</body>
+</html>
+{%endblock%}

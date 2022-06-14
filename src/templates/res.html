@@ -1,0 +1,60 @@
+{% extends 'indexuser.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/viewfeedback">
+<div align="center" >
+    <caption align="top"><h1 style="font-size:32;"><strong><button class="btn btn-warning btn-lg"><b>{{prod}}</b></b></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h1>
+  </caption>
+    <div align="right"><h2><strong>Product Score &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h2>
+  </div>
+    <div align="right"><h2 style="font-size:30;"><big><b><button class="btn btn-danger">{{rate}}</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></big></h2></div>
+
+    <div class="alert alert-success" style="width:800px;" align="left">
+  <strong>Total Number Of Reviews Analyzed  :</strong> <button class="btn btn-success">{{count}}</button>
+</div>
+
+  <div class="alert alert-info" style="width:800px;" align="left">
+  <strong>Total Positive Reviews   :</strong> <button class="btn btn-primary">{{pos}}</button>
+</div>
+      <div class="alert alert-info" style="width:800px;" align="left">
+  <strong>Total Negative Reviews  :</strong><button class="btn btn-primary">{{neg}}</button>
+</div>
+
+
+    <div class="alert alert-danger" style="width:800px;" align="left">
+  <strong>Number Of Spams Removed  :</strong><button class="btn btn-primary">{{spam}}</button>
+</div>
+    <br>
+    <br>
+
+</div>
+</form>
+</body>
+</html>
+{%endblock%}

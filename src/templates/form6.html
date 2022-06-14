@@ -1,0 +1,76 @@
+{% extends 'indexadmin.html'%}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f3f3f3;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form action="/updateproduct1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <h2 align="top"><strong>UPDATE PRODUCT</strong></h2>
+
+  <div align="center">
+    <table width="390" height="317" border="0" id="customers">
+      <tr>
+        <th width="187" scope="row">Product Name </th>
+        <th width="141"><label>
+          <input type="text" name="textfield"value="{{val[1]}}" />
+        </label></th>
+      </tr>
+      <tr>
+        <td scope="row">Quantity</td>
+        <td><label>
+          <input type="text" name="textfield3"value="{{val[3]}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">Description </th>
+        <th><label>
+           <textarea name="textarea"value="{{val[4]}}">{{val[4]}}</textarea>
+        </label></th>
+      </tr>
+      <tr>
+        <td scope="row">Price</td>
+        <td><label>
+          <input type="text" name="textfield2" value="{{val[5]}}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th height="60" colspan="2" scope="row"><label>
+        <div align="left">
+          <label></label>
+          <label>
+          </label>
+        </div>
+        </label></th>
+      </tr>
+      </table>
+    <div align="center">
+            <input type="submit" name="Submit" value="Update" />
+          </div>
+  </div>
+</form>
+</body>
+</html>
+{% endblock%}
