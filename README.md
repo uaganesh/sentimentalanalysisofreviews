@@ -1,5 +1,5 @@
 
-                                             Grading of Online Products Using Sentimental Analysis
+                                        Grading of Online Products Using Sentimental Analysis
 
 A system that gives customers with a verified score of any online product derived using the
 Sentiment Analysis NLP technology. The system looks through the text for keywords that convey
